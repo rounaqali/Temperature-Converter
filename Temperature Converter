@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            color: white;
+            background-color: black;
+        }
+        
+        h1 {
+            color: rgb(52, 230, 250);
+            font-family: algerian;
+            margin: 8% 0px 20px 17%;
+            font-size: 3em;
+        }
+        
+        .border {
+            width: 457px;
+            margin: auto;
+            padding: 3px;
+            border-radius: 10px;
+            background-image: linear-gradient(red, orange, yellow, yellowgreen, lime, green);
+            animation: key 5s 2s linear forwards;
+        }
+        
+        .temp {
+            border-radius: 10px;
+            font-size: 1.5em;
+            width: 450px;
+            height: 150px;
+            background-color: rgb(25, 25, 25);
+            box-sizing: border-box;
+            padding-top: 25px;
+            padding-left: 35px;
+        }
+        
+        table,
+        th,
+        td,
+        tr {
+            background-color: rgb(25, 25, 25);
+            color: rgb(15, 246, 169);
+            font-size: 2rem;
+        }
+        
+        .input {
+            color: rgb(33, 4, 254);
+            height: 30px;
+            text-align: center;
+            font-size: 18px;
+            height: 30px;
+            width: 185px;
+            box-sizing: border-box;
+            font-weight: bold;
+            background-color: white;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Temperature Converter
+    </h1>
+
+    <div class="border">
+        <div class="temp">
+            <table>
+                <th>Celsius</th>
+                <th>Fahrenheit</th>
+                <tr>
+                    <td><input type="number" class="input" id="cel"></td>
+                    <td><input type="number" class="input" id="far"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        cel = document.getElementById("cel");
+        far = document.getElementById("far");
+        cel.addEventListener('input', function() {
+            celsius = cel.value;
+            fahren = (celsius * 9 / 5) + 32;
+            far.value = fahren;
+        });
+        far.addEventListener('input', function() {
+            let fahren = far.value;
+            let celsius = (fahren - 32) * 5 / 9;
+            cel.value = celsius;
+        });
+    </script>
+</body>
+
+</html>
